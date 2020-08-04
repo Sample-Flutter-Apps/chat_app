@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "440082252956",
+    "firebase_url": "https://glossy-calculus-279617.firebaseio.com",
+    "project_id": "glossy-calculus-279617",
+    "storage_bucket": "glossy-calculus-279617.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:440082252956:android:6faa505f5913f5f0825959",
+        "android_client_info": {
+          "package_name": "com.example.chat_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "440082252956-0e6oga2tmpo7t220r1jjmf235t52137k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2loceSNb0xqeAgeSOIk8FbXLlbRrI5jA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "440082252956-0e6oga2tmpo7t220r1jjmf235t52137k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:440082252956:android:8f9d17dfbfd84b0f825959",
+        "android_client_info": {
+          "package_name": "com.example.my_first_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "440082252956-0e6oga2tmpo7t220r1jjmf235t52137k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2loceSNb0xqeAgeSOIk8FbXLlbRrI5jA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "440082252956-0e6oga2tmpo7t220r1jjmf235t52137k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
