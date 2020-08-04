@@ -24,8 +24,6 @@ samples, guidance on mobile development, and a full API reference.
 * Configure your project for Firestore
 * Add StreamBuilder to your chat screen
 
-* Design auth form
-
 
 
 
