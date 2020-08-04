@@ -1,41 +1,53 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:chat_app/widgets/messages.dart';
+import 'package:chat_app/widgets/new_message.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class ChatScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: StreamBuilder(
-        stream: Firestore.instance
-            .collection('chats/hB5pZVAZ944sJPrHA9Wv/messages')
-            .snapshots(),
-        builder: (ctx, streamSnapshot) {
-          if (streamSnapshot.connectionState == ConnectionState.waiting) {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
-          } else {
-            final documents = streamSnapshot.data.documents;
-            //print(documents);
-            return ListView.builder(
-              itemCount: documents.length,
-              itemBuilder: (ctx, index) {
-                return Container(
-                  padding: EdgeInsets.all(10),
-                  child: Text(documents[index]['text']),
-                );
-              },
-            );
-          }
-        },
+      appBar: AppBar(
+        title: Text('Flutter Chat'),
+        actions: <Widget>[
+          DropdownButton(
+            icon: Icon(
+              Icons.more_vert,
+              color: Theme.of(context).primaryIconTheme.color,
+            ),
+            items: [
+              DropdownMenuItem(
+                  child: Container(
+                    child: Row(
+                      children: <Widget>[
+                        Icon(Icons.exit_to_app),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text('logoiut'),
+                      ],
+                    ),
+                  ),
+                  value: 'logout')
+            ],
+            onChanged: (value) {
+              if (value == 'logout') {
+                print('Logout called');
+                FirebaseAuth.instance.signOut();
+              }
+            },
+          )
+        ],
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {
-          Firestore.instance.collection('chats/hB5pZVAZ944sJPrHA9Wv/messages').add({
-            'text' : 'New text added',
-          });
-        },
+      body: Container(
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              child: Messages(),
+            ),
+            NewMessage(),
+          ],
+        ),
       ),
     );
   }
