@@ -24,7 +24,7 @@ class ChatScreen extends StatelessWidget {
                         SizedBox(
                           width: 10,
                         ),
-                        Text('logoiut'),
+                        Text('Logout'),
                       ],
                     ),
                   ),

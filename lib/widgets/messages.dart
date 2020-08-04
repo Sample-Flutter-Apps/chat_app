@@ -19,7 +19,9 @@ class Messages extends StatelessWidget {
                 .snapshots(),
             builder: (ctx, chatSnapshot) {
               if (chatSnapshot.connectionState == ConnectionState.waiting) {
-                return CircularProgressIndicator();
+                return Center(
+                  child: CircularProgressIndicator(),
+                );
               } else {
                 final chatDocs = chatSnapshot.data.documents;
                 return ListView.builder(
@@ -31,6 +33,7 @@ class Messages extends StatelessWidget {
                       message: chatDocs[index]['text'],
                       isMe: chatDocs[index]['userId'] == userSnapshot.data.uid,
                       username: chatDocs[index]['username'],
+                      userImage: chatDocs[index]['userImage'],
                     );
                   },
                 );
